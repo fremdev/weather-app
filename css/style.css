@@ -1,3 +1,36 @@
 /*****************
 General
 *****************/
+#weather-widget {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#weather-icon {
+  font-size: 62px;
+}
+
+h1 {
+  flex: 1 100%;
+  text-align: center;
+}
+
+.weather-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 auto;
+  text-align: center;
+}
+
+.wear-this {
+  flex: 0 auto;
+  text-align: center;
+}
+
+.wear-this img {
+  max-height: 300px;
+  margin: 0 auto;
+}

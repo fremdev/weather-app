@@ -37,7 +37,7 @@
     weatherTemp.innerHTML = tempCelsius + '°C';
     document.getElementById('weather-description').innerHTML = currentWeather.weather[0].main;
     document.getElementById('weather-icon').innerHTML = getIconString(currentWeather.weather[0].id);
-    document.getElementById('clothes').innerHTML = '<img src="' + getClothesImage(tempCelsius) + '" alt="Clothes for wearing at ' + tempCelsius + ' Celsius">';
+    document.getElementById('clothes').innerHTML = '<img class="img-responsive" src="' + getClothesImage(tempCelsius) + '" alt="Clothes for wearing at ' + tempCelsius + ' Celsius">';
     convertButton.addEventListener('click', function() {
       if (metric === true) {
         weatherTemp.innerHTML = tempFahrenheit + '°F';
