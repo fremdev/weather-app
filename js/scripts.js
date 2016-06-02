@@ -49,5 +49,36 @@
     return iconString;
   }
 
+  function getClothesImage(tempC) {
+    var imageUrl = '';
+    var clothesByTemp = {
+      0: './img/0.jpg',
+      5: './img/5.jpg',
+      10: './img/10.jpg',
+      15: './img/15.jpg',
+      20: './img/20.jpg',
+      30: './img/30.jpg',
+    };
+    if (tempC <= 0) {
+      imageUrl = clothesByTemp[0];
+    }
+    else if (tempC < 6) {
+      imageUrl = clothesByTemp[5];
+    }
+    else if (tempC < 11) {
+      imageUrl = clothesByTemp[10];
+    }
+    else if (tempC < 21) {
+      imageUrl = clothesByTemp[15];
+    }
+    else if (tempC < 31) {
+      imageUrl = clothesByTemp[20];
+    }
+    else {
+      imageUrl = clothesByTemp[30];
+    }
+    return imageUrl;
+  }
+
   getWeatherFromIp();
 })();
