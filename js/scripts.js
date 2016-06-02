@@ -29,7 +29,25 @@
   }
 
   function renderPage(currentWeather) {
-    document.getElementById('weather-widget').innerHTML = currentWeather.main.temp;
+    document.getElementById('weather-city').innerHTML = currentWeather.name + ", " + currentWeather.sys.country;
+    document.getElementById('weather-temp').innerHTML = Math.round(currentWeather.main.temp) + "°C";
+    document.getElementById('weather-description').innerHTML = currentWeather.weather[0].main;
+    document.getElementById('weather-icon').innerHTML = getIconString(currentWeather.weather[0].id);
   }
+
+  function getIconString(weatherId) {
+    var iconString = '<i class="wi wi-owm-';
+    var date = new Date();
+    var currentHours = date.getHours();
+    if (currentHours > 21 || currentHours < 6) {
+      iconString += "night-";
+    }
+    else {
+      iconString += "day-";
+    }
+    iconString += weatherId + '"></i>';
+    return iconString;
+  }
+
   getWeatherFromIp();
 })();
