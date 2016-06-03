@@ -30,6 +30,9 @@
   function renderPage(currentWeather) {
     var convertButton = document.getElementById('convert');
     var weatherTemp = document.getElementById('weather-temp');
+    var windSpeed = document.getElementById('wind-speed');
+    var windMetersSec = Math.round(currentWeather.wind.speed);
+    var windMilesHour = Math.round(currentWeather.wind.speed / 0.44704);
     var metric = true;
     var tempCelsius = Math.round(currentWeather.main.temp);
     var tempFahrenheit = Math.round(currentWeather.main.temp * 9/5 + 32);
@@ -37,15 +40,19 @@
     weatherTemp.innerHTML = tempCelsius + '°C';
     document.getElementById('weather-description').innerHTML = currentWeather.weather[0].main;
     document.getElementById('weather-icon').innerHTML = getIconString(currentWeather.weather[0].id);
+    windSpeed.innerHTML = windMetersSec + ' m/s';
+    document.getElementById('wind-icon').innerHTML = '<i class="wi wi-wind from-' + currentWeather.wind.deg + '-deg"></i>';
     document.getElementById('clothes').innerHTML = '<img class="img-responsive" src="' + getClothesImage(tempCelsius) + '" alt="Clothes for wearing at ' + tempCelsius + ' Celsius">';
     convertButton.addEventListener('click', function() {
       if (metric === true) {
         weatherTemp.innerHTML = tempFahrenheit + '°F';
+        windSpeed.innerHTML = windMilesHour + ' mph'
         convertButton.textContent = 'To Metric';
         metric = false;
       }
       else {
         weatherTemp.innerHTML = tempCelsius + '°C';
+        windSpeed.innerHTML = windMetersSec + ' m/s';
         convertButton.textContent = 'To Imperial';
         metric = true;
       }
