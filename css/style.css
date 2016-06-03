@@ -1,12 +1,17 @@
 /*****************
 General
 *****************/
+body {
+  font-family: 'Work Sans', Tahoma, Helvetica, sans-serif;
+}
+
 #weather-widget {
   display: flex;
   flex-flow: row wrap;
-  width: 50%;
+  max-width: 500px;
   margin: 0 auto;
   background-color: #c5e7e8;
+  padding: 10px;
 }
 
 .icon {
@@ -16,6 +21,8 @@ General
 h1 {
   flex: 1 100%;
   text-align: center;
+  margin: 0 0 10px;
+  font-family: 'Vollkorn', serif;
 }
 
 .weather-data {
@@ -25,11 +32,25 @@ h1 {
   flex: 1 auto;
   text-align: center;
   font-size: 3rem;
+  margin: auto 10px;
+}
+
+.btn {
+  font-size: 1.5rem;
+  background-color: #9C5B8A;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #DFB4D0;
 }
 
 .wear-this {
   flex: 1 auto;
   text-align: center;
+  background-color: #fff;
+  padding-top: 10px;
+  font-size: 1.5rem;
+  margin: 10px 10px 0;
 }
 
 .wear-this img {
