@@ -3,7 +3,7 @@
   function getWeatherFromIp() {
     if (window.location.protocol === 'https:') {
       document.getElementById('weather-widget').insertAdjacentHTML('afterbegin',
-    '<div class="error"><h3>Error!</h3>You\'re on the https protocol page. Current API works only with http protocol. Use http protocol please. Sorry for inconvenience.</div>');
+    '<div class="error"><h3>Error!</h3>You\'re on the https protocol page. Current API works only with http protocol. Use http protocol please - you can see an example of working version <a href="http://codepen.io/fremdev/pen/JKdyjG" target="_blank">here</a>. Sorry for inconvenience.</div>');
     }
     var requestIpData = new XMLHttpRequest();
     requestIpData.open('GET', 'http://ip-api.com/json', true);
