@@ -1,6 +1,10 @@
 (function() {
 
   function getWeatherFromIp() {
+    if (window.location.protocol === 'https:') {
+      document.getElementById('weather-widget').insertAdjacentHTML('afterbegin',
+    '<div class="error"><h3>Error!</h3>You\'re on the https protocol page. Current API works only with http protocol. Use http protocol please. Sorry for inconvenience.</div>');
+    }
     var requestIpData = new XMLHttpRequest();
     requestIpData.open('GET', 'http://ip-api.com/json', true);
 
@@ -28,10 +32,6 @@
   }
 
   function renderPage(currentWeather) {
-    if (window.location.protocol === 'https:') {
-      document.getElementById('weather-widget').insertAdjacentHTML('afterbegin',
-    '<div class="error"><h3>Error!</h3>You\'re on the https protocol page. Current API works only with http protocol. Use http protocol please. Sorry for inconvenience.</div>');
-    }
     var convertButton = document.getElementById('convert');
     var weatherTemp = document.getElementById('weather-temp');
     var windSpeed = document.getElementById('wind-speed');
